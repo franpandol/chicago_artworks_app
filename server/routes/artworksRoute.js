@@ -19,15 +19,16 @@ router.get('/', async (req, res, next) => {
 }
 );
 router.get('/find/:artistTitle', async (req, res, next) => {
-    const { artistTitle } = req.params;
-    const artworksRef = db.collection('artworks');
-    const snapshot = await artworksRef.where('artist_title', '==', artistTitle).get();
-    const artworks = [];
-    snapshot.forEach(doc => {
-        artworks.push({ id: doc.id, ...doc.data() });
-    });
-    res.json(artworks);
+    await fetchArtworks(req.params.artistTitle)
+        .then(artworks => res.json(artworks))
+        .catch(error => {
+            console.error("Error fetching artworks:", error);
+            res.status(500).send('Internal Server Error');
+        });
 });
+
+
+
 
 
 router.get('/:id', async (req, res, next) => {
