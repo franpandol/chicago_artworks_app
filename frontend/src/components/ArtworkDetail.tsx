@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 interface Artwork {
     title: string;
@@ -17,15 +17,13 @@ function ArtworkDetail() {
     const [artwork, setArtwork] = useState<Artwork | null>(null);
 
     useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/artworks/${id}`)
-            .then(response => response.json())
+        fetch(`${import.meta.env.VITE_API_URL}/api/artworks/${id}`)
+            .then((response) => response.json())
             .then((data: Artwork) => {
                 setArtwork(data);
-
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error("Error fetching artwork details:", error);
-
             });
     }, [id]);
 
@@ -36,16 +34,22 @@ function ArtworkDetail() {
     return (
         <div className="artwork-detail">
             <h2>{artwork.title}</h2>
-            <img 
-                src={artwork.image_url} 
-                alt={artwork.title} 
-                style={{maxWidth: '100%', cursor: 'zoom-in'}}
-            />
-            <p><strong>Artist:</strong> {artwork.artist_title}</p>
-            <p><strong>Date:</strong> {artwork.date_display}</p>
-            <p><strong>Origin:</strong> {artwork.place_of_origin}</p>
-            <p><strong>Medium:</strong> {artwork.medium_display}</p>
-            <p><strong>Additional Information:</strong> {artwork.wiki_summary}</p>
+            <img src={artwork.image_url} alt={artwork.title} style={{ maxWidth: "100%", cursor: "zoom-in" }} />
+            <p>
+                <strong>Artist:</strong> {artwork.artist_title}
+            </p>
+            <p>
+                <strong>Date:</strong> {artwork.date_display}
+            </p>
+            <p>
+                <strong>Origin:</strong> {artwork.place_of_origin}
+            </p>
+            <p>
+                <strong>Medium:</strong> {artwork.medium_display}
+            </p>
+            <p>
+                <strong>Additional Information:</strong> {artwork.wiki_summary}
+            </p>
         </div>
     );
 }
