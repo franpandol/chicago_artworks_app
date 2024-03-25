@@ -24,21 +24,11 @@ The project is a full-stack application that includes a Node.js backend and a Fi
 - A Firebase project with Firestore enabled.
 - Firebase Admin SDK set up and initialized in your project.
 
-### Installation
-
-1. Clone the repository to your local machine.
-
-2. Navigate to the project directory and install the required dependencies:
-
-   ```sh
-   npm install
-   ```
-
 Running the Application
 
 To start the application, run:
    ```sh
-   npm start
+   make run
    ```
 
 
