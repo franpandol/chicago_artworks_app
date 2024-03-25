@@ -1,7 +1,10 @@
 
-# Express Artworks API with Firestore Integration
+# Express Artworks API with Firestore Integration and frontend with React
 
-This project is a Node.js Express application that serves as a backend for an art-related application, fetching artist and artwork data from Firestore. It integrates several key middlewares and libraries for security, performance, and functionality enhancement.
+This project is created to practice React and Node.js and experiment new features and to be the base for blog posts. 
+
+The project is a full-stack application that includes a Node.js backend and a Firestore database. The backend serves as an API for fetching artist and artwork data from Firestore, while the frontend is a React application that consumes this data and displays it to the user.
+
 
 ## Features
 
