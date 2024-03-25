@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import ArtworkList from './components/ArtworkList';
 import ArtistList from './components/ArtistList';
 import ArtworkDetail from './components/ArtworkDetail';
+import ArtistDetail from './components/ArtistDetail';
 import './App.css';
 
 const App: React.FC = () => {
@@ -29,9 +30,12 @@ const App: React.FC = () => {
           {/* Main Content */}
           <div className="main-content">
             <Routes>
+            <Route path="/artworks/:id" element={<ArtworkDetail />} />
+
               <Route path="/artworks" element={<ArtworkList />} />
+              <Route path="/artists/:id" element={<ArtistDetail />} />
               <Route path="/artists" element={<ArtistList />} />
-              <Route path="/artworks/:id" element={<ArtworkDetail />} />
+
               {/* Define the route for additional pages here */}
             </Routes>
           </div>
