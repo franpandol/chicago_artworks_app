@@ -1,5 +1,5 @@
 
-# Chicago Artworks API with Firestore, React and Express
+# Chicago Artworks App with Firestore, React and Express
 
 This project is created to practice React and Node.js and experiment new features and to be the base for blog posts. 
 
